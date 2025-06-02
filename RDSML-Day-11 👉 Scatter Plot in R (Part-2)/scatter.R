@@ -45,5 +45,18 @@ ggplot(dataset, aes(x = wt, y = mpg)) +
 
 # Scatter plots with multiple groups
 
-# Changing the point shape 
 
+# Converting the cyl column from a numeric to factor variable
+dataset$cyl = as.factor(dataset$cyl)
+
+# Changing the point shape by the levels of cyl
+ggplot(dataset, aes(x = wt, y = mpg, shape = cyl)) + 
+  geom_point()
+
+# Changing point shapes and colors
+ggplot(dataset, aes(x = wt, y = mpg, shape = cyl, color = cyl)) + 
+  geom_point()
+
+# Changing point shapes, colors and Sizes
+ggplot(dataset, aes(x = wt, y = mpg, shape = cyl, color = cyl)) + 
+  geom_point()
